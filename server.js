@@ -73,3 +73,11 @@ app.post('/updateApplicationStatus', (req, res) => {
         .then(response => res.status(200).send(response.rows))
         .catch(error => res.status(500).send(error.stack))
 })
+
+app.post('/updateSalary', (req, res) => {
+    const body = req.body
+
+    db.query('update jobs set salary = $1 where id = $2', [body.salary, body.id])
+        .then(response => res.status(200).send(response.rows))
+        .catch(error => res.status(500).send(error.stack))
+})
