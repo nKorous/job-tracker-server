@@ -1,4 +1,3 @@
-
 const express = require('express')
 const cors = require('cors')
 
@@ -37,8 +36,6 @@ app.get('/job', (req, res) => {
         .then(response => res.status(200).send(response.rows))
         .catch(error => res.status(500).send(error.stack))
 })
-
-
 
 // POST
 app.post('/job', (req, res) => {
