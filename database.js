@@ -4,7 +4,4 @@ const client = new Client(dbConnection)
 
 client.connect()
 
-
 module.exports = client
-
-
